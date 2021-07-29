@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Fragment>
+  <PageHeader
+    className="site-page-header"
+    onBack={[Function]}
+    subTitle="Non comercial project. With love to you."
+    title="About"
+  />
+</Fragment>
+`;
