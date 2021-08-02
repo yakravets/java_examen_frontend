@@ -4,13 +4,13 @@ import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 import toJson from "enzyme-to-json";
 
-import About from './About';
+import ListAircraft from './ListAircraft';
 
 it("renders correctly", () => {
-    const tree = shallow(<About />);
+    const tree = shallow(<ListAircraft />);
     expect(toJson(tree)).toMatchSnapshot();
 });
 
 it("renders without crashing", () => {
-    shallow(<About />);
+    shallow(<ListAircraft />);
 });

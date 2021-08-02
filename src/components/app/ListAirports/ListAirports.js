@@ -6,7 +6,6 @@ export default function ListAirports() {
     <>
       <PageHeader
         className="site-page-header"
-        onBack={() => window.history.back()}
         title="Airports"
         subTitle="List all airports"
       />

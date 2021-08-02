@@ -4,8 +4,8 @@ exports[`renders correctly 1`] = `
 <Fragment>
   <PageHeader
     className="site-page-header"
-    subTitle="Non comercial project. With love to you."
-    title="About"
+    subTitle="List all aircrafts"
+    title="Aircraft"
   />
 </Fragment>
 `;

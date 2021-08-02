@@ -6,7 +6,6 @@ export default function About() {
       <>
         <PageHeader
           className="site-page-header"
-          onBack={() => window.history.back()}
           title="About"
           subTitle="Non comercial project. With love to you."
         />
