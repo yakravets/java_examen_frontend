@@ -1,10 +1,12 @@
 import React from 'react';
-import { Divider } from 'antd';
-import { Layout } from 'antd';
-import { DatePicker } from 'antd';
-import { Button } from 'antd';
+import { 
+  Divider, 
+  Layout,
+  DatePicker,
+  Button,
+  Input,
+  Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import { Input, Space } from 'antd';
 const { Search } = Input;
 
 export default function Home() {
