@@ -6,7 +6,6 @@ export default function ListAircraft() {
     <>
       <PageHeader
         className="site-page-header"
-        onBack={() => window.history.back()}
         title="Aircraft"
         subTitle="List all aircrafts"
       />

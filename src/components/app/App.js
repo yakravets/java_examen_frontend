@@ -19,25 +19,15 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import { GiCommercialAirplane } from "react-icons/gi";
 import { MdAirlineSeatReclineExtra } from "react-icons/md";
 import { FaRegListAlt } from "react-icons/fa";
-import { AudioOutlined } from '@ant-design/icons';
 import { GrMenu } from 'react-icons/gr';
-
-const suffix = (
-  <AudioOutlined
-    style={{
-      fontSize: 16,
-      color: '#1890ff',
-    }}
-  />
-);
 
 export default class App extends React.Component {
   state = {
-    current: 'mail',
+    current: 'home'
   };
 
   handleClick = e => {
-    this.setState({ current: e.key });
+    this.setState({current: e.key});
   };
 
   render() {
@@ -69,10 +59,10 @@ export default class App extends React.Component {
           <ListTrips />
         </Route>
         <Route path="/airports">
-          <ListAirports/>
+          <ListAirports />
         </Route>
         <Route path="/aircraft">
-          <ListAircraft/>
+          <ListAircraft />
         </Route>
         <Route path="/">
           <Home />

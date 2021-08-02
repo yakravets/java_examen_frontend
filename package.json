@@ -58,6 +58,5 @@
         "coverageReporters": [
             "lcov"
         ]
-        
     }
 }

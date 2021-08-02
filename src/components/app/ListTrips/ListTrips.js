@@ -6,7 +6,6 @@ export default function ListTrips() {
       <>
         <PageHeader
           className="site-page-header"
-          onBack={() => window.history.back()}
           title="Trips"
           subTitle="List all trips"
         />
