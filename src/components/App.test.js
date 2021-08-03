@@ -23,14 +23,16 @@ beforeEach(() => {
     }
 );
 
-it('We can check if the consumer called the class constructor', () => {
-    const appConsumer = new AppConsumer();
+it('We can check if the consumer called a method on the class instance', () => {
+    // Show that mockClear() is working:
+    expect(App).not.toHaveBeenCalled();
+  
+    const testAppConsumer = new AppConsumer();
+    // Constructor should have been called again:
     expect(App).toHaveBeenCalledTimes(1);
 });
 
-const mockHandleClick = jest.fn();
-jest.mock('./app', ()=>{
-    return jest.fn().mockImplementation(() => {
-        return {handleClick: mockHandleClick};
-      });
-}); 
+it('We can check if the consumer called the class constructor', () => {
+    const testAppConsumer = new AppConsumer();
+    expect(App).toHaveBeenCalledTimes(1);
+});
