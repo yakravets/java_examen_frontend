@@ -1,3 +1,163 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `""`;
+exports[`renders correctly 1`] = `
+<BrowserRouter>
+  <Menu
+    mode="horizontal"
+    onClick={[Function]}
+    selectedKeys={
+      Array [
+        "home",
+      ]
+    }
+  >
+    <MenuItem
+      icon={<GrMenu />}
+      key="home"
+    >
+      <Link
+        to="/"
+      >
+        Home
+      </Link>
+    </MenuItem>
+    <MenuItem
+      icon={<FaRegListAlt />}
+      key="trips"
+    >
+      <Link
+        to="/trips"
+      >
+        Trips
+      </Link>
+    </MenuItem>
+    <MenuItem
+      icon={<MdAirlineSeatReclineExtra />}
+      key="airports"
+    >
+      <Link
+        to="/airports"
+      >
+        Airports
+      </Link>
+    </MenuItem>
+    <MenuItem
+      icon={<GiCommercialAirplane />}
+      key="aircraft"
+    >
+      <Link
+        to="/aircraft"
+      >
+        Aircraft
+      </Link>
+    </MenuItem>
+    <MenuItem
+      icon={<AiOutlineInfoCircle />}
+      key="about"
+    >
+      <Link
+        to="/about"
+      >
+        About
+      </Link>
+    </MenuItem>
+  </Menu>
+  <Switch>
+    <Route
+      path="/about"
+    >
+      <Suspense
+        fallback={
+          <div
+            className="content"
+          >
+            <Space
+              className="space_main"
+            >
+              <Loader />
+            </Space>
+          </div>
+        }
+      >
+        <lazy />
+      </Suspense>
+    </Route>
+    <Route
+      path="/trips"
+    >
+      <Suspense
+        fallback={
+          <div
+            className="content"
+          >
+            <Space
+              className="space_main"
+            >
+              <Loader />
+            </Space>
+          </div>
+        }
+      >
+        <lazy />
+      </Suspense>
+    </Route>
+    <Route
+      path="/airports"
+    >
+      <Suspense
+        fallback={
+          <div
+            className="content"
+          >
+            <Space
+              className="space_main"
+            >
+              <Loader />
+            </Space>
+          </div>
+        }
+      >
+        <lazy />
+      </Suspense>
+    </Route>
+    <Route
+      path="/aircraft"
+    >
+      <Suspense
+        fallback={
+          <div
+            className="content"
+          >
+            <Space
+              className="space_main"
+            >
+              <Loader />
+            </Space>
+          </div>
+        }
+      >
+        <lazy />
+      </Suspense>
+    </Route>
+    <Route
+      path="/"
+    >
+      <Suspense
+        fallback={
+          <div
+            className="content"
+          >
+            <Space
+              className="space_main"
+            >
+              <Loader />
+            </Space>
+          </div>
+        }
+      >
+        <lazy />
+      </Suspense>
+    </Route>
+  </Switch>
+</BrowserRouter>
+`;
