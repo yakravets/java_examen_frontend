@@ -8,11 +8,11 @@ import {
 import 'antd/dist/antd.css';
 import './App.css';
 
-import Home from './Home';
-import About from './About';
-import ListTrips from './ListTrips';
-import ListAircraft from './ListAircraft';
-import ListAirports from './ListAirports';
+import Home from './components/Home';
+import About from './components/About';
+import ListTrips from './components/ListTrips';
+import ListAircraft from './components/ListAircraft';
+import ListAirports from './components/ListAirports';
 
 import { Menu } from 'antd';
 import { AiOutlineInfoCircle } from "react-icons/ai";
@@ -22,19 +22,19 @@ import { FaRegListAlt } from "react-icons/fa";
 import { GrMenu } from 'react-icons/gr';
 
 export default class App extends React.Component {
-  state = {
-    current: 'home'
-  };
+  constructor(props) {
+    super(props);
+    this.state = {current: 'home'};
+  }  
 
   handleClick = e => {
     this.setState({current: e.key});
   };
 
   render() {
-    const { current } = this.state;
     return (
       <Router>
-        <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
+        <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
           <Menu.Item key="home" icon={<GrMenu />}>
             <Link to="/">Home</Link>
           </Menu.Item>
