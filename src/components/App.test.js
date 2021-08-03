@@ -6,12 +6,6 @@ import toJson from "enzyme-to-json";
 
 import App from './app';
 
-export default class AppConsumer{
-    constructor() {
-        this.app = new App();
-    }
-}
-
 it("renders correctly", () => {
     const tree = shallow(<App />);
     expect(toJson(tree)).toMatchSnapshot();
