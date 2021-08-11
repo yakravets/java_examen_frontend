@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Fragment>
+  <ForwardRef(InternalForm)
+    initialValues={
+      Object {
+        "remember": true,
+      }
+    }
+    labelCol={
+      Object {
+        "span": 8,
+      }
+    }
+    name="basic"
+    onFinish={[Function]}
+    onFinishFailed={[Function]}
+    wrapperCol={
+      Object {
+        "span": 16,
+      }
+    }
+  >
+    <FormItem
+      label="Username"
+      name="username"
+      rules={
+        Array [
+          Object {
+            "message": "Please input your username!",
+            "required": true,
+          },
+        ]
+      }
+    >
+      <Input
+        type="text"
+      />
+    </FormItem>
+    <FormItem
+      label="Password"
+      name="password"
+      rules={
+        Array [
+          Object {
+            "message": "Please input your password!",
+            "required": true,
+          },
+        ]
+      }
+    >
+      <Password
+        action="click"
+        iconRender={[Function]}
+        visibilityToggle={true}
+      />
+    </FormItem>
+    <FormItem
+      name="remember"
+      valuePropName="checked"
+      wrapperCol={
+        Object {
+          "offset": 8,
+          "span": 16,
+        }
+      }
+    >
+      <Checkbox>
+        Remember me
+      </Checkbox>
+    </FormItem>
+    <FormItem
+      wrapperCol={
+        Object {
+          "offset": 8,
+          "span": 16,
+        }
+      }
+    >
+      <Button
+        htmlType="submit"
+        type="primary"
+      >
+        Submit
+      </Button>
+    </FormItem>
+  </ForwardRef(InternalForm)>
+</Fragment>
+`;
