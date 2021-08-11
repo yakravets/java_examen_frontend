@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Fragment>
+  <div
+    className="content"
+  >
+    <Layout>
+      <Space
+        className="space_main"
+      >
+        <Layout
+          direction="vertical"
+        >
+          <Divider
+            orientation="left"
+          >
+            From:
+          </Divider>
+          <Space>
+            <Search
+              onSearch={[Function]}
+              placeholder="From"
+              size="large"
+              style={
+                Object {
+                  "width": 200,
+                }
+              }
+            />
+            <Picker
+              onChange={[Function]}
+              size="large"
+            />
+          </Space>
+        </Layout>
+        <Layout
+          direction="vertical"
+        >
+          <Divider
+            orientation="left"
+          >
+            To:
+          </Divider>
+          <Space>
+            <Search
+              onSearch={[Function]}
+              placeholder="To"
+              size="large"
+              style={
+                Object {
+                  "width": 200,
+                }
+              }
+            />
+            <Picker
+              onChange={[Function]}
+              size="large"
+            />
+            <Button
+              icon={<ForwardRef(SearchOutlined) />}
+              size="large"
+              type="primary"
+            >
+              Search
+            </Button>
+          </Space>
+        </Layout>
+      </Space>
+    </Layout>
+  </div>
+</Fragment>
+`;

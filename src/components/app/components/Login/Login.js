@@ -69,7 +69,7 @@ export default function Login(){
         </Form>
     </>
   );
-};
+}
 
 const onFinish = (values) => {
     console.log('Success:', values);
