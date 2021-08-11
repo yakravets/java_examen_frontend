@@ -8,6 +8,8 @@ import {
   Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
+const onSearch = value => console.log(value);
+
 export default function Home() {
     return (
     <>
@@ -17,16 +19,16 @@ export default function Home() {
             <Layout direction="vertical">
               <Divider orientation="left">From:</Divider>
               <Space>
-                <Input size="large" placeholder="From" onSearch={onSearch} style={{ width: 200 }} />
+                <Input.Search size="large" placeholder="From" onSearch={onSearch} style={{ width: 200 }} />
                 <DatePicker size="large" onChange={onChange} />
               </Space>
             </Layout>
             <Layout direction="vertical">
               <Divider orientation="left">To:</Divider>
               <Space>
-                <Input size="large" placeholder="To" onSearch={onSearch} style={{ width: 200 }} />
+                <Input.Search size="large" placeholder="To" onSearch={onSearch} style={{ width: 200 }} />
                 <DatePicker size="large" onChange={onChange} />
-                <Button  size="large" type="primary" icon={<SearchOutlined />} success>
+                <Button  size="large" type="primary" icon={<SearchOutlined />}>
                   Search
                 </Button>
               </Space>
@@ -36,8 +38,6 @@ export default function Home() {
       </div>
     </>);
   }
-
-  const onSearch = value => console.log(value);
 
   function onChange(date, dateString) {
     console.log(date, dateString);

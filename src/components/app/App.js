@@ -15,6 +15,7 @@ import { MdAirlineSeatReclineExtra } from "react-icons/md";
 import { FaRegListAlt } from "react-icons/fa";
 import { GrMenu } from 'react-icons/gr';
 import Loader from './components/Loader';
+import Login from './components/Login';
 
 const Home = React.lazy(() => import('./components/Home'));
 const About = React.lazy(() => import('./components/About'));
@@ -53,57 +54,62 @@ export default class App extends React.Component {
           </Menu.Item>
         </Menu>
         <Switch>
-        <Route path="/about">
-          <Suspense fallback={
-              <div className="content">
-                <Space className="space_main">
-                    <Loader /> 
-                </Space>
-              </div>} >
-              <About />
-          </Suspense>          
-        </Route>
-        <Route path="/trips">
-          <Suspense fallback={
-              <div className="content">
-                <Space className="space_main">
-                    <Loader /> 
-                </Space>
-              </div>} >
-              <ListTrips />
-          </Suspense>
-        </Route>
-        <Route path="/airports">
-          <Suspense fallback={
-              <div className="content">
-                <Space className="space_main">
-                    <Loader /> 
-                </Space>
-              </div>} >
-              <ListAirports />
-          </Suspense>          
-        </Route>
-        <Route path="/aircraft">
-          <Suspense fallback={
-              <div className="content">
-                <Space className="space_main">
-                    <Loader /> 
-                </Space>
-              </div>} >
-              <ListAircraft />
-          </Suspense>              
-        </Route>
-        <Route path="/">
-          <Suspense fallback={
-              <div className="content">
-                <Space className="space_main">
-                    <Loader /> 
-                </Space>
-              </div>} >
-            <Home />
-          </Suspense>
-        </Route>
-      </Switch>
+          <Route path="/about">
+            <Suspense fallback={
+                <div className="content">
+                  <Space className="space_main">
+                      <Loader /> 
+                  </Space>
+                </div>} >
+                <About />
+            </Suspense>          
+          </Route>
+          <Route path="/trips">
+            <Suspense fallback={
+                <div className="content">
+                  <Space className="space_main">
+                      <Loader /> 
+                  </Space>
+                </div>} >
+                <ListTrips />
+            </Suspense>
+          </Route>
+          <Route path="/airports">
+            <Suspense fallback={
+                <div className="content">
+                  <Space className="space_main">
+                      <Loader /> 
+                  </Space>
+                </div>} >
+                <ListAirports />
+            </Suspense>          
+          </Route>
+          <Route path="/aircraft">
+            <Suspense fallback={
+                <div className="content">
+                  <Space className="space_main">
+                      <Loader /> 
+                  </Space>
+                </div>} >
+                <ListAircraft />
+            </Suspense>              
+          </Route>
+          <Route  path="/login">
+            <div className="content">
+              <Login />
+            </div>
+          </Route>
+          <Route path="/">
+            <Suspense fallback={
+                <div className="content">
+                  <Space className="space_main">
+                      <Loader /> 
+                  </Space>
+                </div>} >
+              <Home />
+            </Suspense>
+          </Route>          
+        </Switch>
       </Router>
     );
   }
