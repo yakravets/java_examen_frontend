@@ -4,9 +4,9 @@ import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 import toJson from "enzyme-to-json";
 
-import App from './app';
+import App from '.';
 
 it("renders correctly", () => {
-    const tree = shallow(<App />);
+    const tree = shallow( < App / > );
     expect(toJson(tree)).toMatchSnapshot();
 });

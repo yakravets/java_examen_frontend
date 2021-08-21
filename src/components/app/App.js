@@ -15,6 +15,7 @@ import { MdAirlineSeatReclineExtra } from "react-icons/md";
 import { FaRegListAlt } from "react-icons/fa";
 import { GrMenu } from 'react-icons/gr';
 import Loader from './components/Loader';
+import { UserOutlined } from '@ant-design/icons';
 import Login from './components/Login';
 
 const Home = React.lazy(() => import('./components/Home'));
@@ -51,6 +52,9 @@ export default class App extends React.Component {
           </Menu.Item>
           <Menu.Item key="about" icon={<AiOutlineInfoCircle/>}>
             <Link to="/about">About</Link>
+          </Menu.Item> 
+          <Menu.Item key="account" icon={<UserOutlined/>} className='accountItem'>
+            <Link to="/account">Account</Link>
           </Menu.Item>
         </Menu>
         <Switch>
