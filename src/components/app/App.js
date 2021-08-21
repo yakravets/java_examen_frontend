@@ -8,11 +8,12 @@ import {
 import 'antd/dist/antd.css';
 import './App.css';
 
-import { Menu, Space } from 'antd';
+import { Menu, Space, Layout } from 'antd';
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { GiCommercialAirplane } from "react-icons/gi";
 import { MdAirlineSeatReclineExtra } from "react-icons/md";
-import { FaRegListAlt } from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
+import { FaRegListAlt, FaSignOutAlt, FaSignInAlt } from "react-icons/fa";
 import { GrMenu } from 'react-icons/gr';
 import Loader from './components/Loader';
 import { UserOutlined } from '@ant-design/icons';
@@ -27,36 +28,61 @@ const ListAirports = React.lazy(() => import('./components/ListAirports'));
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {current: 'home'};
+    this.state = {
+      current: 'home',
+      userName: 'John Smith',
+      logined: false,
+    };
   }  
 
   handleClick = e => {
     this.setState({current: e.key});
   };
 
-  render() {
-    return (
-      <Router>
-        <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
-          <Menu.Item key="home" icon={<GrMenu />}>
-            <Link to="/">Home</Link>
-          </Menu.Item>
-          <Menu.Item key="trips" icon={<FaRegListAlt />}>
-            <Link to="/trips">Trips</Link>
-          </Menu.Item>
-          <Menu.Item key="airports" icon={<MdAirlineSeatReclineExtra />}>
-            <Link to="/airports">Airports</Link>
-          </Menu.Item>
-          <Menu.Item key="aircraft" icon={<GiCommercialAirplane />}>
-            <Link to="/aircraft">Aircraft</Link>
-          </Menu.Item>
-          <Menu.Item key="about" icon={<AiOutlineInfoCircle/>}>
-            <Link to="/about">About</Link>
-          </Menu.Item> 
-          <Menu.Item key="account" icon={<UserOutlined/>} className='accountItem'>
-            <Link to="/account">Account</Link>
-          </Menu.Item>
-        </Menu>
+  AppMenu() {
+    return(
+      <>
+        <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" className="test">
+            <Menu.Item key="home" icon={<GrMenu />}>
+              <Link to="/">Home</Link>
+            </Menu.Item>
+            <Menu.Item key="trips" icon={<FaRegListAlt />}>
+              <Link to="/trips">Trips</Link>
+            </Menu.Item>
+            <Menu.Item key="airports" icon={<MdAirlineSeatReclineExtra />}>
+              <Link to="/airports">Airports</Link>
+            </Menu.Item>
+            <Menu.Item key="aircraft" icon={<GiCommercialAirplane />}>
+              <Link to="/aircraft">Aircraft</Link>
+            </Menu.Item>
+            <Menu.Item key="about" icon={<AiOutlineInfoCircle/>}>
+              <Link to="/about">About</Link>
+            </Menu.Item> 
+            <Menu.SubMenu 
+              key="sub1" 
+              icon={<UserOutlined />} 
+              title={this.state.logined === true? this.state.userName:"Profile"}>
+                {this.state.logined === true?
+                  <>
+                    <Menu.Item key="tickets" icon={<FiSettings />}>My tickets</Menu.Item>
+                    <Menu.Item key="settings" icon={<FiSettings />}>Settings</Menu.Item>
+                    <Menu.Item key="logout" icon={<FaSignOutAlt />}>Logout</Menu.Item>
+                  </>
+                  :
+                  <>
+                    <Menu.Item key="login" icon={<FaSignInAlt />}>
+                      <Link to="/login">Login</Link>
+                    </Menu.Item>
+                  </>}
+            </Menu.SubMenu>            
+          </Menu>
+      </>
+    );
+  }
+
+  AppSwitch(){
+    return(
+      <>
         <Switch>
           <Route path="/about">
             <Suspense fallback={
@@ -99,9 +125,10 @@ export default class App extends React.Component {
             </Suspense>              
           </Route>
           <Route  path="/login">
-            <div className="content">
               <Login />
-            </div>
+          </Route>
+          <Route  path="/account">
+            <Login />
           </Route>
           <Route path="/">
             <Suspense fallback={
@@ -114,6 +141,19 @@ export default class App extends React.Component {
             </Suspense>
           </Route>          
         </Switch>
+      </>
+    );
+  }
+
+  render() {
+    return (
+      <Router>
+        <Layout>
+          <Layout.Content>            
+            {this.AppMenu()}
+            {this.AppSwitch()}
+          </Layout.Content>
+        </Layout>
       </Router>
     );
   }

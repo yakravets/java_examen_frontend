@@ -2,89 +2,94 @@
 
 exports[`renders correctly 1`] = `
 <Fragment>
-  <ForwardRef(InternalForm)
-    initialValues={
-      Object {
-        "remember": true,
-      }
-    }
-    labelCol={
-      Object {
-        "span": 8,
-      }
-    }
-    name="basic"
-    onFinish={[Function]}
-    onFinishFailed={[Function]}
-    wrapperCol={
-      Object {
-        "span": 16,
-      }
-    }
+  <div
+    className="login-form"
   >
-    <FormItem
-      label="Username"
-      name="username"
-      rules={
-        Array [
-          Object {
-            "message": "Please input your username!",
-            "required": true,
-          },
-        ]
+    <ForwardRef(InternalForm)
+      initialValues={
+        Object {
+          "remember": true,
+        }
       }
-    >
-      <Input
-        type="text"
-      />
-    </FormItem>
-    <FormItem
-      label="Password"
-      name="password"
-      rules={
-        Array [
-          Object {
-            "message": "Please input your password!",
-            "required": true,
-          },
-        ]
+      labelCol={
+        Object {
+          "span": 8,
+        }
       }
-    >
-      <Password
-        action="click"
-        iconRender={[Function]}
-        visibilityToggle={true}
-      />
-    </FormItem>
-    <FormItem
-      name="remember"
-      valuePropName="checked"
+      name="basic"
+      onFinish={[Function]}
+      onFinishFailed={[Function]}
       wrapperCol={
         Object {
-          "offset": 8,
-          "span": 16,
+          "span": 8,
         }
       }
     >
-      <Checkbox>
-        Remember me
-      </Checkbox>
-    </FormItem>
-    <FormItem
-      wrapperCol={
-        Object {
-          "offset": 8,
-          "span": 16,
+      <Divider />
+      <FormItem
+        label="Username"
+        name="username"
+        rules={
+          Array [
+            Object {
+              "message": "Please input your username!",
+              "required": true,
+            },
+          ]
         }
-      }
-    >
-      <Button
-        htmlType="submit"
-        type="primary"
       >
-        Submit
-      </Button>
-    </FormItem>
-  </ForwardRef(InternalForm)>
+        <Input
+          type="text"
+        />
+      </FormItem>
+      <FormItem
+        label="Password"
+        name="password"
+        rules={
+          Array [
+            Object {
+              "message": "Please input your password!",
+              "required": true,
+            },
+          ]
+        }
+      >
+        <Password
+          action="click"
+          iconRender={[Function]}
+          visibilityToggle={true}
+        />
+      </FormItem>
+      <FormItem
+        name="remember"
+        valuePropName="checked"
+        wrapperCol={
+          Object {
+            "offset": 8,
+            "span": 16,
+          }
+        }
+      >
+        <Checkbox>
+          Remember me
+        </Checkbox>
+      </FormItem>
+      <FormItem
+        wrapperCol={
+          Object {
+            "offset": 8,
+            "span": 16,
+          }
+        }
+      >
+        <Button
+          htmlType="submit"
+          type="primary"
+        >
+          Submit
+        </Button>
+      </FormItem>
+    </ForwardRef(InternalForm)>
+  </div>
 </Fragment>
 `;
