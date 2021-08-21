@@ -16,6 +16,7 @@ import { FaRegListAlt } from "react-icons/fa";
 import { GrMenu } from 'react-icons/gr';
 import Loader from './components/Loader';
 import { UserOutlined } from '@ant-design/icons';
+import Login from './components/Login';
 
 const Home = React.lazy(() => import('./components/Home'));
 const About = React.lazy(() => import('./components/About'));
@@ -97,6 +98,11 @@ export default class App extends React.Component {
                 <ListAircraft />
             </Suspense>              
           </Route>
+          <Route  path="/login">
+            <div className="content">
+              <Login />
+            </div>
+          </Route>
           <Route path="/">
             <Suspense fallback={
                 <div className="content">
@@ -106,7 +112,7 @@ export default class App extends React.Component {
                 </div>} >
               <Home />
             </Suspense>
-          </Route>
+          </Route>          
         </Switch>
       </Router>
     );

@@ -140,6 +140,15 @@ exports[`renders correctly 1`] = `
       </Suspense>
     </Route>
     <Route
+      path="/login"
+    >
+      <div
+        className="content"
+      >
+        <Login />
+      </div>
+    </Route>
+    <Route
       path="/"
     >
       <Suspense
