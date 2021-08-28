@@ -18,6 +18,9 @@ import { GrMenu } from 'react-icons/gr';
 import Loader from './components/Loader';
 import { UserOutlined } from '@ant-design/icons';
 import Login from './components/Login';
+import Page404 from './components/infoPages/page404';
+import Page403 from './components/infoPages/page403';
+import Page500 from './components/infoPages/page500';
 
 const Home = React.lazy(() => import('./components/Home'));
 const About = React.lazy(() => import('./components/About'));
@@ -129,6 +132,15 @@ export default class App extends React.Component {
           </Route>
           <Route  path="/account">
             <Login />
+          </Route>
+          <Route path='/403'>
+              <Page403 />
+          </Route>
+          <Route path='/404'>
+            <Page404 />
+          </Route>
+          <Route path='/500'>
+            <Page500 />
           </Route>
           <Route path="/">
             <Suspense fallback={

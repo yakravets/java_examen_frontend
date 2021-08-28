@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox, Layout, Divider } from 'antd';
+import { Form, Input, Button, Checkbox, Divider } from 'antd';
 import './Login.css';
 
 export default function Login(){
