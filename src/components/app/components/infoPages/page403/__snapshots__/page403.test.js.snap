@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Fragment>
+  <Result
+    extra={
+      <Button
+        type="primary"
+      >
+        Back Home
+      </Button>
+    }
+    status="403"
+    subTitle="Sorry, you are not authorized to access this page."
+    title="403"
+  />
+</Fragment>
+`;

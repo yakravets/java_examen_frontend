@@ -20,6 +20,13 @@
 }
 
 .accountItem {
-    justify-content: flex-end;
-    color: red;
+    float: right;
+}
+
+.test {
+    display: flex;
+}
+
+.test:nth-child(6n) {
+    padding: 100px;
 }
