@@ -5,6 +5,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+import config from './config.js';
+
 import 'antd/dist/antd.css';
 import './App.css';
 
@@ -14,6 +17,7 @@ import { GiCommercialAirplane } from "react-icons/gi";
 import { MdAirlineSeatReclineExtra } from "react-icons/md";
 import { FiSettings } from "react-icons/fi";
 import { FaRegListAlt, FaSignOutAlt, FaSignInAlt } from "react-icons/fa";
+import { IoTicketOutline } from "react-icons/io5";
 import { GrMenu } from 'react-icons/gr';
 import Loader from './components/Loader';
 import { UserOutlined } from '@ant-design/icons';
@@ -27,7 +31,7 @@ const About = React.lazy(() => import('./components/About'));
 const ListTrips = React.lazy(() => import('./components/ListTrips'));
 const ListAircraft = React.lazy(() => import('./components/ListAircraft'));
 const ListAirports = React.lazy(() => import('./components/ListAirports'));
-
+const UserSettings = React.lazy(() => import ('./components/UserSettings'));
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -35,12 +39,62 @@ export default class App extends React.Component {
       current: 'home',
       userName: 'John Smith',
       logined: false,
+      admin: true,
+	  config: config
     };
   }  
 
+  componentDidMount(){
+
+    let token = localStorage.getItem('token');
+    let tokenFound = token != null && token.length != 0;
+
+    let refreshToken = localStorage.getItem('refreshToken');
+    let refreshTokenFound = refreshToken != null && refreshToken.length != 0;
+    if(tokenFound && refreshTokenFound){
+      this.validateToken(token, refreshToken);
+    }
+  }
+
+  validateToken(token, refreshToken){
+
+  }
+
   handleClick = e => {
     this.setState({current: e.key});
+
+    switch(e.key){
+      case 'logout':
+        this.setState({logined: false});
+        break;
+      case 'login':
+        //this.setState({logined: true});
+        break;
+    }
   };
+
+  logout(){
+	  
+	const config = this.state;
+	let url = config.api_url + config.auth_logout;
+	console.log(url);
+	
+  }
+  
+  onLogin = (data) => {
+	  console.log(data);
+	  if(data.success){
+		localStorage.setItem("token", data.token);
+		localStorage.setItem("refreshToken", data.token);
+		
+		this.setState(
+		{
+			userName: `${data.firstName} ${data.lastName}`,
+			logined: true,
+			admin: data.role === 'ROLE_ADMIN'
+		});
+	  }	 
+  }
 
   AppMenu() {
     return(
@@ -67,8 +121,10 @@ export default class App extends React.Component {
               title={this.state.logined === true? this.state.userName:"Profile"}>
                 {this.state.logined === true?
                   <>
-                    <Menu.Item key="tickets" icon={<FiSettings />}>My tickets</Menu.Item>
-                    <Menu.Item key="settings" icon={<FiSettings />}>Settings</Menu.Item>
+                    <Menu.Item key="tickets" icon={<IoTicketOutline />}>My tickets</Menu.Item>
+                    <Menu.Item key="settings" icon={<FiSettings />}>
+                      <Link to="/settings">My settings</Link>
+                    </Menu.Item>
                     <Menu.Item key="logout" icon={<FaSignOutAlt />}>Logout</Menu.Item>
                   </>
                   :
@@ -128,7 +184,9 @@ export default class App extends React.Component {
             </Suspense>              
           </Route>
           <Route  path="/login">
-              <Login />
+              <Login
+				loginUrl = {this.state.config.api_url + this.state.config.auth_login}
+				loginCallback={this.onLogin}/>
           </Route>
           <Route  path="/account">
             <Login />
@@ -141,6 +199,16 @@ export default class App extends React.Component {
           </Route>
           <Route path='/500'>
             <Page500 />
+          </Route>
+          <Route path='/settings'>
+            <Suspense fallback={
+              <div className="content">
+                <Space className="space_main">
+                    <Loader /> 
+                </Space>
+              </div>} >
+              <UserSettings name={this.state.userName}/>
+            </Suspense>
           </Route>
           <Route path="/">
             <Suspense fallback={
