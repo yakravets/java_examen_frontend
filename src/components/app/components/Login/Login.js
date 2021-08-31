@@ -68,11 +68,10 @@ export default class Login extends React.Component{
 			</div>
 		</>
 	  );
-	};
+	}
 	
 	onFinish = (formValues) => {
 		
-		console.log('Success:', formValues);
 		axios.post(
 			this.state.loginUrl,
 			JSON.stringify(formValues),
@@ -92,12 +91,12 @@ export default class Login extends React.Component{
 			}
 		  })
 		.catch(function (error) {
-			message.error(error);
+			message.error("Network error. Try again await.");
 		  });
 		
   };
   
 	  onFinishFailed = (errorInfo) => {
-		console.log('Failed:', errorInfo);
+		message.error("Found unfilled fields.");
   };
 }
