@@ -92,7 +92,7 @@ export default class Login extends React.Component{
 			}
 		  })
 		.catch(function (error) {
-			message.error(error);
+			message.error("Network error. Try again await.");
 		  });
 		
   };
