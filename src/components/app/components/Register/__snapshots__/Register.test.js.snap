@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Fragment>
+  <Layout
+    className="content_register"
+  >
+    <ForwardRef(InternalForm)
+      form={
+        Object {
+          "__INTERNAL__": Object {
+            "itemRef": [Function],
+          },
+          "getFieldError": [Function],
+          "getFieldInstance": [Function],
+          "getFieldValue": [Function],
+          "getFieldsError": [Function],
+          "getFieldsValue": [Function],
+          "getInternalHooks": [Function],
+          "isFieldTouched": [Function],
+          "isFieldValidating": [Function],
+          "isFieldsTouched": [Function],
+          "isFieldsValidating": [Function],
+          "resetFields": [Function],
+          "scrollToField": [Function],
+          "setFields": [Function],
+          "setFieldsValue": [Function],
+          "submit": [Function],
+          "validateFields": [Function],
+        }
+      }
+      labelCol={
+        Object {
+          "sm": Object {
+            "span": 8,
+          },
+          "xs": Object {
+            "span": 16,
+          },
+        }
+      }
+      name="register"
+      onFinish={[Function]}
+      scrollToFirstError={true}
+      wrapperCol={
+        Object {
+          "sm": Object {
+            "span": 24,
+          },
+          "xs": Object {
+            "span": 24,
+          },
+        }
+      }
+    >
+      <Layout
+        className="block_data_register"
+        orientation="vertical"
+      >
+        <Divider
+          orientation="left"
+        >
+          Access:
+        </Divider>
+        <FormItem
+          label="E-mail"
+          name="email"
+          rules={
+            Array [
+              Object {
+                "message": "The input is not valid E-mail!",
+                "type": "email",
+              },
+              Object {
+                "message": "Please input your E-mail!",
+                "required": true,
+              },
+            ]
+          }
+        >
+          <Input
+            type="text"
+          />
+        </FormItem>
+        <FormItem
+          hasFeedback={true}
+          label="Password"
+          name="password"
+          rules={
+            Array [
+              Object {
+                "message": "Please input your password!",
+                "required": true,
+              },
+            ]
+          }
+        >
+          <Password
+            action="click"
+            iconRender={[Function]}
+            visibilityToggle={true}
+          />
+        </FormItem>
+        <FormItem
+          dependencies={
+            Array [
+              "password",
+            ]
+          }
+          hasFeedback={true}
+          label="Confirm"
+          name="confirm"
+          rules={
+            Array [
+              Object {
+                "message": "Please confirm your password!",
+                "required": true,
+              },
+              [Function],
+            ]
+          }
+        >
+          <Password
+            action="click"
+            iconRender={[Function]}
+            visibilityToggle={true}
+          />
+        </FormItem>
+      </Layout>
+      <Layout
+        className="block_data_register"
+        orientation="vertical"
+      >
+        <Divider
+          orientation="left"
+        >
+          Contact information data:
+        </Divider>
+        <FormItem
+          label="First name"
+          name="firstName"
+          rules={
+            Array [
+              Object {
+                "message": "Please input your First name!",
+                "required": true,
+                "whitespace": true,
+              },
+            ]
+          }
+        >
+          <Input
+            type="text"
+          />
+        </FormItem>
+        <FormItem
+          label="Last name"
+          name="lastName"
+          rules={
+            Array [
+              Object {
+                "message": "Please input your Last name!",
+                "required": true,
+                "whitespace": true,
+              },
+            ]
+          }
+        >
+          <Input
+            type="text"
+          />
+        </FormItem>
+        <FormItem
+          label="Gender"
+          name="gender"
+          rules={
+            Array [
+              Object {
+                "message": "Please select gender!",
+                "required": true,
+              },
+            ]
+          }
+        >
+          <ForwardRef(InternalSelect)
+            placeholder="select your gender"
+          >
+            <Option
+              value="Male"
+            >
+              Male
+            </Option>
+            <Option
+              value="Female"
+            >
+              Female
+            </Option>
+          </ForwardRef(InternalSelect)>
+        </FormItem>
+        <FormItem
+          name="agreement"
+          rules={
+            Array [
+              Object {
+                "validator": [Function],
+              },
+            ]
+          }
+          valuePropName="checked"
+          wrapperCol={
+            Object {
+              "sm": Object {
+                "offset": 4,
+                "span": 16,
+              },
+              "xs": Object {
+                "offset": 0,
+                "span": 12,
+              },
+            }
+          }
+        >
+          <Checkbox>
+            I have read the 
+            <a
+              href=""
+            >
+              agreement
+            </a>
+          </Checkbox>
+        </FormItem>
+        <FormItem
+          wrapperCol={
+            Object {
+              "sm": Object {
+                "offset": 4,
+                "span": 16,
+              },
+              "xs": Object {
+                "offset": 0,
+                "span": 12,
+              },
+            }
+          }
+        >
+          <Button
+            htmlType="submit"
+            type="primary"
+          >
+            Register
+          </Button>
+        </FormItem>
+      </Layout>
+    </ForwardRef(InternalForm)>
+  </Layout>
+</Fragment>
+`;

@@ -79,6 +79,16 @@ exports[`renders correctly 1`] = `
               Login
             </Link>
           </MenuItem>
+          <MenuItem
+            icon={<AiOutlineUserAdd />}
+            key="register"
+          >
+            <Link
+              to="/register"
+            >
+              Register
+            </Link>
+          </MenuItem>
         </SubMenu>
       </Menu>
       <Switch>
@@ -206,6 +216,11 @@ exports[`renders correctly 1`] = `
               name="John Smith"
             />
           </Suspense>
+        </Route>
+        <Route
+          path="/register"
+        >
+          <RegistrationForm />
         </Route>
         <Route
           path="/"

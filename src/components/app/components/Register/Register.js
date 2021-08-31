@@ -1,6 +1,10 @@
 import React from 'react';
-import { Form, Input, Select, Checkbox, Button, Layout, Divider } from 'antd';
+import { Form, Input, Select, Checkbox, Button, Layout, Divider, message } from 'antd';
 import './Register.css';
+import config from '../../config.js';
+import axios from 'axios';
+
+const registerUrl = config.api_url + config.register_register;
 
 const formItemLayout = {
   labelCol: {
@@ -29,7 +33,30 @@ const RegistrationForm = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    
+    axios.post(
+        registerUrl,
+        JSON.stringify(values),
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    .then(res => {
+        
+        if(res.data.success){
+            window.location.href='/login';
+        }
+        else{
+            message.error(res.data.message);
+        }
+      })
+    .catch(function (error) {
+        message.error("Network error. Try again await.");
+      });
+    
+      console.log('Received values of form: ', values);
+
   };
 
   return (
