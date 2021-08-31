@@ -12,7 +12,7 @@ import 'antd/dist/antd.css';
 import './App.css';
 
 import { Menu, Space, Layout } from 'antd';
-import { AiOutlineInfoCircle } from "react-icons/ai";
+import { AiOutlineInfoCircle, AiOutlineUserAdd } from "react-icons/ai";
 import { GiCommercialAirplane } from "react-icons/gi";
 import { MdAirlineSeatReclineExtra } from "react-icons/md";
 import { FiSettings } from "react-icons/fi";
@@ -25,6 +25,7 @@ import Login from './components/Login';
 import Page404 from './components/infoPages/page404';
 import Page403 from './components/infoPages/page403';
 import Page500 from './components/infoPages/page500';
+import RegistrationForm from './components/Register';
 
 const Home = React.lazy(() => import('./components/Home'));
 const About = React.lazy(() => import('./components/About'));
@@ -132,6 +133,9 @@ export default class App extends React.Component {
                     <Menu.Item key="login" icon={<FaSignInAlt />}>
                       <Link to="/login">Login</Link>
                     </Menu.Item>
+                    <Menu.Item key="register" icon={<AiOutlineUserAdd />}>
+                      <Link to="/register">Register</Link>
+                    </Menu.Item>
                   </>}
             </Menu.SubMenu>            
           </Menu>
@@ -209,6 +213,9 @@ export default class App extends React.Component {
               </div>} >
               <UserSettings name={this.state.userName}/>
             </Suspense>
+          </Route>
+          <Route path="/register">
+            <RegistrationForm />
           </Route>
           <Route path="/">
             <Suspense fallback={

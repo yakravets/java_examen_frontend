@@ -1,0 +1,12 @@
+.content_register{
+    align-items: center;
+    padding: 10px;
+}
+
+.block_data_register{
+    border: 1px #1890ff solid;
+    border-radius: 10px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
